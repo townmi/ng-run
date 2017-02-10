@@ -1,0 +1,10 @@
+<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+    Angular Material2 Example App
+    <span class="app-toolbar-filler"></span>
+    <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+  </md-toolbar>
+</md-sidenav-layout>
