@@ -6,7 +6,7 @@ import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnChanges {
   title = 'app works!';
   lastDialogResult: string;
 
@@ -42,6 +42,8 @@ export class AppComponent {
   changeLog: string[] = [];
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
+
+    alert(1);
     let log: string[] = [];
     for (let propName in changes) {
       let changedProp = changes[propName];

@@ -11,6 +11,7 @@ export class NavComponent {
   major: number = 1;
   minor: number = 23;
   toggle() {
+    console.log(1);
     this.major++;
     this.minor = 0;
   }
