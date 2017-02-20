@@ -10,6 +10,7 @@ import {AppComponent, DialogContent} from './app.component';
 import {NavComponent,} from './nav/nav.component';
 import {DemoComponent} from './demo/demo.component';
 import {NameChildComponent} from './demo/child.component';
+import { VideoPlayComponent } from './video-play/video-play.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {NameChildComponent} from './demo/child.component';
     NavComponent,
     DialogContent,
     DemoComponent,
-    NameChildComponent
+    NameChildComponent,
+    VideoPlayComponent
   ],
   entryComponents: [DialogContent],
   imports: [

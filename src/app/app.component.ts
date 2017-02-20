@@ -6,7 +6,7 @@ import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnChanges {
+export class AppComponent implements OnChanges{
   title = 'app works!';
   lastDialogResult: string;
 
