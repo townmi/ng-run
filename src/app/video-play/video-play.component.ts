@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Http} from '@angular/http';
 
 @Component({
@@ -6,13 +6,14 @@ import {Http} from '@angular/http';
   templateUrl: './video-play.component.html',
   styleUrls: ['./video-play.component.css']
 })
-export class VideoPlayComponent implements OnInit {
+export class VideoPlayComponent {
+  private videoBite;
 
   constructor(private http: Http) {
 
   }
+  play () {
 
-  ngOnInit() {
     let video = document.querySelector('video');
 
     let assetURL = '/assets/demo.mp4';
@@ -32,27 +33,30 @@ export class VideoPlayComponent implements OnInit {
       //console.log(this.readyState); // open
       let mediaSource = this;
       let sourceBuffer = mediaSource.addSourceBuffer(mimeCodec);
-      fetchAB(assetURL, function (buf) {
-        sourceBuffer.addEventListener('updateend', function (_) {
-          mediaSource.endOfStream();
-          video.play();
-          //console.log(mediaSource.readyState); // ended
-        });
-        sourceBuffer.appendBuffer(buf);
-      });
+      // fetchAB(assetURL, function (buf) {
+      //   sourceBuffer.addEventListener('updateend', function (_) {
+      //     mediaSource.endOfStream();
+      //     video.play();
+      //     //console.log(mediaSource.readyState); // ended
+      //   });
+      //   sourceBuffer.appendBuffer(buf);
+      // });
     }
-    this.http.get('');
 
-    function fetchAB(url, cb) {
-      console.log(url);
-      let xhr = new XMLHttpRequest;
-      xhr.open('get', url);
-      xhr.responseType = 'arraybuffer';
-      xhr.onload = function () {
-        cb(xhr.response);
-      };
-      xhr.send();
-    }
+    console.log(this.http);
+    this.http.get(assetURL).lift(function (res) {
+      console.log(res);
+    });
+
+    // function fetchAB(url, cb) {
+    //   console.log(url);
+    //   let xhr = new XMLHttpRequest;
+    //   xhr.open('get', url);
+    //   xhr.responseType = 'arraybuffer';
+    //   xhr.onload = function () {
+    //     cb(xhr.response);
+    //   };
+    //   xhr.send();
+    // }
   }
-
 }
