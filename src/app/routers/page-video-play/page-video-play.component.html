@@ -1,4 +1,11 @@
 <div class="videoBox" (click)="videoTogglePlay()">
   <input type="hidden"  [(ngModel)]="videoStatus">
-  <video width="32" height="24" id="video"></video>
+  <video id="video"></video>
+  <div class="controls">
+    <div class="progress">
+      <div class="cache"></div>
+      <div class="played" ngStyle="currentProgress"></div>
+    </div>
+    <md-icon svgIcon="thumbs-up"></md-icon>
+  </div>
 </div>

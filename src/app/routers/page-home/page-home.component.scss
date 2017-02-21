@@ -1,0 +1,28 @@
+.example-grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.example-tile {
+  width: 21%;
+  margin: 20px 2%;
+}
+.example-card {
+}
+
+.example-header-image {
+  background-image: url('//material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+
+@media all {
+
+}

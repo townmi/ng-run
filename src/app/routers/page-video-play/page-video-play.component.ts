@@ -6,11 +6,15 @@ import {Observable} from 'rxjs/Rx';
 @Component({
   selector: 'app-page-video-play',
   templateUrl: './page-video-play.component.html',
-  styleUrls: ['./page-video-play.component.css']
+  styleUrls: ['./page-video-play.component.scss']
 })
 export class PageVideoPlayComponent implements OnInit {
 
   videoStatus = false;
+  timer = null;
+  currentProgress = {
+    'width': "0"
+  };
 
   constructor(private http: Http) {
     // http.get('https://openapip.vipabc.com/VMD/OfficalWebAPI/LPIdeoAPI/ShowSubject?seriesKey=a6811af2-e830-4fef-929e-5ef8b548e5ca&_=1487648364303').map(res => res.json())
@@ -25,6 +29,17 @@ export class PageVideoPlayComponent implements OnInit {
 
     video.addEventListener('play', function () {
 
+    });
+
+    video.addEventListener('progress', function (e) {
+      let len = video.duration;
+      self.timer = setInterval(function () {
+        let currentTime = video.currentTime;
+        self.setCurrentStyles(100);
+        if(len<=currentTime) {
+          clearInterval(self.timer);
+        }
+      }, 60)
     });
     let mimeCodec = 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"';
 
@@ -61,6 +76,11 @@ export class PageVideoPlayComponent implements OnInit {
     }
     this.videoStatus = !this.videoStatus;
 
+  }
+  setCurrentStyles(pec: Number) {
+    this.currentProgress = {
+      'width': "20%"
+    };
   }
 
   getPipe(url: string) {

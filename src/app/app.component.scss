@@ -1,0 +1,18 @@
+nav {
+  /*max-width: 1200px;*/
+  margin: 0 auto 20px auto;
+  background: #1976D2;
+  height: 36px;
+  min-height: 36px;
+  padding: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+  .example-center {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  a {
+    color: #ffffff;
+    font-weight: 300;
+  }
+}
