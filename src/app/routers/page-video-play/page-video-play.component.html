@@ -2,10 +2,10 @@
   <input type="hidden"  [(ngModel)]="videoStatus">
   <video id="video"></video>
   <div class="controls">
-    <div class="progress">
+    <div class="progress" (click)="setNewCurrent($event)">
       <div class="cache"></div>
-      <div class="played" ngStyle="currentProgress"></div>
+      <div class="played" [ngStyle]="progress"></div>
     </div>
-    <md-icon svgIcon="thumbs-up"></md-icon>
   </div>
 </div>
+{{progress.width}}

@@ -9,6 +9,11 @@
   }
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+  &:hover {
+    .controls {
+      opacity: 100;
+    }
+  }
 }
 .controls {
   width: 94%;
@@ -16,6 +21,8 @@
   margin: 0 auto;
   background-color: transparent;
   position: relative;
+  opacity: 0;
+  transition: all 0.4s ease;
   .progress {
     width: 100%;
     height: 5px;
